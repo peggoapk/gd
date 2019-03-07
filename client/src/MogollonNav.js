@@ -16,6 +16,9 @@ function MogollonNav(props) {
           <a className="nav-link" href="projects">
             Projects
           </a>
+          <a className="nav-link" href="blogs">
+            Blogs
+          </a>
         </nav>
       </div>
     </>

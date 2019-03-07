@@ -8,6 +8,7 @@ import Landing from "./Landing";
 import Remodel from "./Remodel";
 import BeforeGallery from "./BeforeGallery";
 import AfterGallery from "./AfterGallery";
+import Blogs from "./Blogs";
 
 function App(props) {
   return (
@@ -32,6 +33,7 @@ function App(props) {
             path={"/projects/remodels/:imageId(\\d+)/afterGallery"}
             component={AfterGallery}
           />
+          <Route exact path="/blogs" component={Blogs} />
         </Switch>
       </div>
       <div>

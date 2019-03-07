@@ -1,3 +1,6 @@
+// ADV *********
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -7,6 +10,7 @@ const path = require("path");
 // ADV **********************
 const cors = require("cors");
 const errorHandler = require("./handlers/error");
+const authRoutes = require("./routes/api/auth");
 // end adv
 
 const app = express();
@@ -15,6 +19,8 @@ app.use(bodyParser.json());
 
 // ADV **********************
 app.use(cors());
+app.use("/api/auth", authRoutes);
+app.use("/api/blogs", blogs);
 
 app.use(function(req, res, next) {
   let err = new Error("Not found");
@@ -32,8 +38,6 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
-
-app.use("/api/mogollon", blogs);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const BlogSchema = new Schema({
+const blogSchema = new Schema({
   title: {
     type: String,
     required: "Title cannot be blank!"
@@ -17,4 +17,4 @@ const BlogSchema = new Schema({
   }
 });
 
-module.exports = Blog = mongoose.model("blog", BlogSchema);
+module.exports = Blog = mongoose.model("blog", blogSchema);

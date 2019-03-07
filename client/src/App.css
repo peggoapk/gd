@@ -288,3 +288,9 @@ section p {
 .slideShowIcon:hover {
   font-weight: bold;
 }
+
+.blogTitle {
+  color: #076059;
+  font-weight: bold;
+  font-size: 1.5em;
+}

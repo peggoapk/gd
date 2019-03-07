@@ -8,7 +8,7 @@ function Blog(props) {
         blogs.map(blog => (
           <div className="card" key={blog._id}>
             <div className="card-body">
-              <h5 className="card-title">{blog.title}</h5>
+              <h5 className="card-title blogTitle">{blog.title}</h5>
               <h6 className="text-subtitle text-muted">{blog.dateCreated}</h6>
               <p className="card-text">{blog.content}</p>
               {blog.image && (

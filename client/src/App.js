@@ -8,7 +8,7 @@ import Landing from "./Landing";
 import Remodel from "./Remodel";
 import BeforeGallery from "./BeforeGallery";
 import AfterGallery from "./AfterGallery";
-import Blogs from "./Blogs";
+import Blogs from "./Blogs/Blogs";
 
 function App(props) {
   return (

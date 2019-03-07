@@ -20,6 +20,12 @@ function BasicNav(props) {
         <a className="nav-link text-dark" href="/aboutUs">
           About Us
         </a>
+        <a className="nav-link text-dark" href="/projects">
+          Projects
+        </a>
+        <a className="nav-link text-dark" href="/blogs">
+          Blogs
+        </a>
       </nav>
     </div>
   );

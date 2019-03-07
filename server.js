@@ -4,9 +4,27 @@ const bodyParser = require("body-parser");
 const blogs = require("./routes/api/blogs");
 const path = require("path");
 
+// ADV **********************
+const cors = require("cors");
+const errorHandler = require("./handlers/error");
+// end adv
+
 const app = express();
 
 app.use(bodyParser.json());
+
+// ADV **********************
+app.use(cors());
+
+app.use(function(req, res, next) {
+  let err = new Error("Not found");
+  err.status = 404;
+  next(err);
+});
+
+app.use(errorHandler);
+
+// end // ADV **********************
 
 const db = require("./config/keys").mongoURI;
 

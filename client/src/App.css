@@ -1,0 +1,290 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+.navbar  {
+  opacity: 0;
+  animation: 1s fadeIn 2s forwards;
+}
+
+a {
+  opacity: 0.65;
+  color: white;
+}
+
+a:hover {
+  opacity: 1;
+  color: white;
+  font-weight: bold;
+}
+
+a.btn {
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #EDEBDA;
+  opacity: .9;
+  color: black;
+}
+
+a.btn:hover {
+  opacity: 1;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section:not(.hero):nth-child(even){
+  background-color: #f5f5f5;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+hr {
+  width: 250px;
+  height: 3px;
+  background-color: #3F3E51;
+  margin-bottom: 50px;
+}
+
+section h3.title {
+text-transform: capitalize; 
+font: bold 32px "Open Sans", sans-serif;
+margin-bottom: 30px;
+text-align: center; 
+color: #555;
+}
+
+section p {
+  max-width: 775px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media (max-width: 800px){
+  section {
+      padding: 30px 20px;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+      opacity: 1;
+  }
+}
+
+.hero {
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.hero .background-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  background-color: #80a3db;
+}
+
+.hero h1 {
+    font: bold 60px "Abel", sans-serif;
+}
+
+.hero h3 {
+    font: normal 28px "Abel", sans-serif;
+}
+
+.hero a.btn {
+  padding: 20px 46px;
+}
+
+.hero-content-area {
+  opacity: 0;
+  margin-top: 100px;
+  animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+  100% {
+      opacity: 1;
+      margin: 0;
+  }
+}
+
+@media (max-width: 800px){
+  .hero {
+      font-size: 3rem;
+  }
+  .hero h1 {
+      font-size: 48px;
+  }
+  .hero h3 {
+      font-size: 24px;
+  }
+  .hero a.btn {
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 520px){
+  .navbar > h3 {
+    font-size: 1rem;
+  }
+  .navbar > a {
+    font-size: .8rem;
+  }
+  .hero h1 {
+    font-size: 35px;
+  }
+  .hero h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 400px){
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+  .navbar > h3 {
+    font-size: .8rem;
+  }
+  .navbar > a {
+    margin: 5px !important;
+    font-size: .6rem;
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+  height: 50vh;
+  }
+}
+
+.remodels .grid img {
+  height: 350px;
+  padding: 20px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+
+.remodels .grid img.small {
+  flex-basis: 35%;
+}
+
+.remodels .grid img.large {
+  flex-basis: 65%;
+}
+
+@media (max-width: 1100px){
+  .remodels .grid img.small, .remodels .grid img.large {
+      flex-basis: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .destinations .grid img.small,
+  .destinations .grid img.large {
+    flex-basis: 100%;
+  }
+}
+
+.emailLink {
+    color:blue
+}
+
+.emailLink:hover{
+    font-weight: bold;
+    color: blue;
+}
+@media (max-width: 1000px) {
+  .contact {
+    flex-basis: 100%;
+    margin: 0 0 20;
+  }
+}
+
+.footer {
+    color: white;
+    background-color: #3f3e51 !important;
+    font-size: 1.2rem;
+    min-width: 100vw;
+}
+
+.projectContainer {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.goBack:hover {
+  cursor: pointer;;
+}
+
+.imgGallery {
+  max-width: 1000px;
+  max-height: 1000px;
+  margin-left: 450px;
+  margin-right: 450px;
+}
+
+@media (max-width: 1100px){
+  .imgGallery {
+    display: grid;
+    grid-template-columns: 98vw;
+    margin-left: 0;
+  margin-right: 0;
+  }
+}
+@media (max-width: 500px){
+  .imgGallery {
+    display: grid;
+    grid-template-columns: 100vw;
+  }
+  .slideHeading {
+    font-size: 2.3em;
+  }
+  .slideShowIcon {
+    font-size: .6em !important;
+  }
+}
+
+.cardProject {
+  cursor: pointer;
+}
+
+.cardProject:hover {
+  box-shadow: 0 0 5px rgb(22, 138, 247);
+}
+
+.slideShowIcon {
+  font-size: .8em;
+  cursor: pointer;
+  
+}
+
+.slideShowIcon:hover {
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+*Dependencies 
+passport-jwt
+validator
+bcryptjs
+password
+express
+mongoose
+jsonwebtoken
+body-parser

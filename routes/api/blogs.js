@@ -3,6 +3,9 @@ const router = express.Router();
 
 const Blog = require("../../models/Blog");
 
+// @route GET api/blogs
+// @desc Tests blogs route
+// @access Public
 router.get("/", (req, res) => {
   Blog.find().then(blogs => res.json(blogs));
 });

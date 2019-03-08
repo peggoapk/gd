@@ -19,7 +19,13 @@ const userSchema = new Schema({
   },
   profileImageUrl: {
     type: String
-  }
+  },
+  blogs: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Blog"
+    }
+  ]
 });
 
 userSchema.pre("save", async function(next) {
@@ -29,12 +35,13 @@ userSchema.pre("save", async function(next) {
     }
     let hashedPassword = await bcrypt.hash(this.password, 10);
     this.password = hashedPassword;
+    return next();
   } catch (err) {
-    next(err);
+    return next(err);
   }
 });
 
-userSchema.method.comparePassword = async function(candidatePassword, next) {
+userSchema.methods.comparePassword = async function(candidatePassword, next) {
   try {
     let isMatch = await bcrypt.compare(candidatePassword, this.password);
     return isMatch;

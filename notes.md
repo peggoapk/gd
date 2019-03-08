@@ -7,3 +7,7 @@ express
 mongoose
 jsonwebtoken
 body-parser
+
+# 1
+Jwt creates token
+Passport extracts the infor

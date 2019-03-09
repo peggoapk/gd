@@ -1,9 +1,8 @@
 import React from "react";
-import BasicNav from "./BasicNav";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-function AfterGallery(props) {
+export const AfterGallery = () => {
   const afterImages = [
     {
       original:
@@ -68,12 +67,11 @@ function AfterGallery(props) {
   ];
   return (
     <>
-      <BasicNav />
       <div className="imgGallery">
         <ImageGallery items={afterImages} />
       </div>
     </>
   );
-}
+};
 
 export default AfterGallery;

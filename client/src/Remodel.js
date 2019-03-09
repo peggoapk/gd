@@ -1,5 +1,4 @@
 import React from "react";
-import BasicNav from "./BasicNav";
 
 function Remodel(props) {
   const beforeImages = [
@@ -127,7 +126,7 @@ function Remodel(props) {
 
   return (
     <>
-      <BasicNav />
+      {/* <BasicNav /> */}
       <div className="container">
         <div className="row">
           <div className="col-12">

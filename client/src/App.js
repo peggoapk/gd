@@ -9,11 +9,16 @@ import Remodel from "./Remodel";
 import BeforeGallery from "./BeforeGallery";
 import AfterGallery from "./AfterGallery";
 import Blogs from "./Blogs/Blogs";
+import ContactUs from "./ContactUs";
+import MogollonNav from "./MogollonNav";
+import Login from "./Auth/Login";
+import Register from "./Auth/Register";
 
 function App(props) {
   return (
     <>
       <div>
+        <MogollonNav />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/aboutUs" component={AboutUs} />
@@ -34,6 +39,9 @@ function App(props) {
             component={AfterGallery}
           />
           <Route exact path="/blogs" component={Blogs} />
+          <Route exact path="/contactUs" component={ContactUs} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
       <div>

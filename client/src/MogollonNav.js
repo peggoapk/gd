@@ -1,28 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
 
 function MogollonNav(props) {
+  const [navColor, setNavColor] = useState(false);
+  useEffect(currentUrlLocaton);
+  function currentUrlLocaton() {
+    let location = props.location.pathname;
+    console.log(location);
+    location === "/" ||
+    location === "https://mogolloninteriors.herokuapp.com/" ||
+    location === "https://mogolloninteriors.herokuapp.com/aboutUs" ||
+    location === "/aboutUs"
+      ? setNavColor(true)
+      : setNavColor(false);
+  }
   return (
     <>
-      <div className="navbar">
+      <div className={navColor ? "navbar" : "navbar navBarBottom"}>
         <h3>
-          <a className="nav-link" href="/">
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/"
+          >
             Mogollon Interiors
-          </a>
+          </Link>
         </h3>
         <nav className="navbar">
-          <a className="nav-link" href="aboutUs">
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/aboutUs"
+          >
             About Us
-          </a>
-          <a className="nav-link" href="projects">
+          </Link>
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/contactUs"
+          >
+            Contact
+          </Link>
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/services"
+          >
+            Services
+          </Link>
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/projects"
+          >
             Projects
-          </a>
-          <a className="nav-link" href="blogs">
+          </Link>
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/blogs"
+          >
             Blogs
-          </a>
+          </Link>
+          <Link
+            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            to="/login"
+          >
+            Login
+          </Link>
         </nav>
       </div>
     </>
   );
 }
 
-export default MogollonNav;
+export default withRouter(MogollonNav);

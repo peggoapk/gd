@@ -1,18 +1,23 @@
 import React from "react";
+import styles from "./Footer.module.css";
 
-function Footer() {
+export const Footer = () => {
   return (
-    <div className="footer text-center">
-      <p>Get in touch!</p>
-      {/* <a href="sms:1-928-853-1816">
-          <i className="fas fa-sms ml-3" />
+    <div className={styles.footer}>
+      <div className={styles.footerLinks}>
+        <a href="/contactUs" className={styles.footerAnchor}>
+          Contact Us
         </a>
-        <a href="tel:1-928-853-1816">
-          <i className="fas fa-phone ml-3" />
+        <a href="/aboutUs" className={styles.footerAnchor}>
+          About Us
         </a>
-      </div> */}
+        <a href="/services" className={styles.footerAnchor}>
+          Services
+        </a>
+      </div>
+      <div>Copyright &copy; {new Date().getFullYear()} Mogollon Interiors.</div>
     </div>
   );
-}
+};
 
 export default Footer;

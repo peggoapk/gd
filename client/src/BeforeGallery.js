@@ -1,9 +1,8 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import BasicNav from "./BasicNav";
 
-function BeforeGallery(props) {
+export const BeforeGallery = () => {
   const beforeImages = [
     {
       original:
@@ -80,12 +79,11 @@ function BeforeGallery(props) {
   ];
   return (
     <>
-      <BasicNav />
       <div className="imgGallery">
         <ImageGallery items={beforeImages} />
       </div>
     </>
   );
-}
+};
 
 export default BeforeGallery;

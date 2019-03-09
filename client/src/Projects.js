@@ -1,5 +1,4 @@
 import React from "react";
-import BasicNav from "./BasicNav";
 
 function Projects(props) {
   function handleRemodel() {
@@ -8,7 +7,7 @@ function Projects(props) {
 
   return (
     <>
-      <BasicNav />
+      {/* <BasicNav /> */}
       <div className="container">
         <h1 className="text-center pb-2">Our Projects</h1>
         <div className="row">

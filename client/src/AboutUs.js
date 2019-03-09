@@ -1,10 +1,8 @@
 import React from "react";
-import MogollonNav from "./MogollonNav";
 
-function AboutUs(props) {
+export const AboutUs = () => {
   return (
     <>
-      <MogollonNav />
       <section className="hero">
         <div
           className="background-image"
@@ -31,6 +29,6 @@ function AboutUs(props) {
       </section>
     </>
   );
-}
+};
 
 export default AboutUs;

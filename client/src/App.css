@@ -11,14 +11,25 @@
   animation: 1s fadeIn 2s forwards;
 }
 
-a {
-  opacity: 0.65;
+.wLink {
+  opacity: 0.65 !important;
   color: white;
 }
 
-a:hover {
-  opacity: 1;
-  color: white;
+.wLink:hover {
+  opacity: 1 !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.bLink {
+  opacity: 0.65 !important;
+  color: black !important;
+}
+
+.bLink:hover {
+  opacity: 1 !important;
+  color: black !important;
   font-weight: bold;
 }
 
@@ -103,7 +114,6 @@ section p {
   height: 100%;
   background-size: cover;
   z-index: -1;
-  background-color: #80a3db;
 }
 
 .hero h1 {
@@ -224,13 +234,6 @@ section p {
   }
 }
 
-.footer {
-    color: white;
-    background-color: #3f3e51 !important;
-    font-size: 1.2rem;
-    min-width: 100vw;
-}
-
 .projectContainer {
   border: 1px solid red;
   display: flex;
@@ -293,4 +296,8 @@ section p {
   color: #076059;
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.navBarBottom {
+  border-bottom: #076059 solid 1px !important;
 }

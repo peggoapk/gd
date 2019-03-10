@@ -7,7 +7,6 @@ function Projects(props) {
 
   return (
     <>
-      {/* <BasicNav /> */}
       <div className="container">
         <h1 className="text-center pb-2">Our Projects</h1>
         <div className="row">

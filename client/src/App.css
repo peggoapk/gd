@@ -301,3 +301,9 @@ section p {
 .navBarBottom {
   border-bottom: #076059 solid 1px !important;
 }
+
+.userForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

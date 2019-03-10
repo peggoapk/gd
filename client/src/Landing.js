@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Landing = () => {
   return (
@@ -14,10 +15,10 @@ export const Landing = () => {
         <div className="hero-content-area">
           <h1>Mogollon Interiors</h1>
           <h3>Need a remodel? You've come to the right place.</h3>
-          <a href="/contactUs" className="btn">
+          <Link to="/contactUs" className="btn">
             {" "}
             <span className="fa fa-phone" /> Contact Us Now
-          </a>
+          </Link>
         </div>
       </section>
       <section className="remodels">
@@ -61,9 +62,9 @@ export const Landing = () => {
             }}
           />
         </div>
-        <a href="projects" className="btn mb-5">
+        <Link to="projects" className="btn mb-5">
           See More
-        </a>
+        </Link>
       </section>
       <section className="contact py-5">
         <h3 className="title">Learn More</h3>

@@ -22,7 +22,6 @@ function App(props) {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/aboutUs" component={AboutUs} />
-          <Route exact path="/projects" component={Projects} />
           <Route
             exact
             path={"/projects/remodels/:imageId(\\d+)"}
@@ -38,10 +37,13 @@ function App(props) {
             path={"/projects/remodels/:imageId(\\d+)/afterGallery"}
             component={AfterGallery}
           />
-          <Route exact path="/blogs" component={Blogs} />
-          <Route exact path="/contactUs" component={ContactUs} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+          <div className="container">
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/contactUs" component={ContactUs} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+          </div>
         </Switch>
       </div>
       <div>

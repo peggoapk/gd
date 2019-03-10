@@ -6,7 +6,6 @@ function MogollonNav(props) {
   useEffect(currentUrlLocaton);
   function currentUrlLocaton() {
     let location = props.location.pathname;
-    console.log(location);
     location === "/" ||
     location === "https://mogolloninteriors.herokuapp.com/" ||
     location === "https://mogolloninteriors.herokuapp.com/aboutUs" ||
@@ -14,18 +13,36 @@ function MogollonNav(props) {
       ? setNavColor(true)
       : setNavColor(false);
   }
+
+  // need to add in toggler?
   return (
     <>
-      <div className={navColor ? "navbar" : "navbar navBarBottom"}>
-        <h3>
+      <nav
+        className={
+          navColor
+            ? "navbar navbar-expand-sm mb-4"
+            : "navbar navbar-expand-sm mb-4 navBarBottom"
+        }
+      >
+        <div className="container">
           <Link
-            className={navColor ? "nav-link wLink" : "nav-link bLink"}
+            className={
+              navColor
+                ? "navbar-brand nav-link wLink"
+                : "navbar-brand nav-link bLink"
+            }
             to="/"
           >
             Mogollon Interiors
           </Link>
-        </h3>
-        <nav className="navbar">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#mobile-nav"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
           <Link
             className={navColor ? "nav-link wLink" : "nav-link bLink"}
             to="/aboutUs"
@@ -62,8 +79,8 @@ function MogollonNav(props) {
           >
             Login
           </Link>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </>
   );
 }

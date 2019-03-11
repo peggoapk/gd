@@ -1,6 +1,4 @@
 import React from "react";
-// import BasicNav from "./BasicNav";
-// import MogollonNav from "./MogollonNav";
 
 function ContactUs(props) {
   return (

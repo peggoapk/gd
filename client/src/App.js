@@ -13,6 +13,7 @@ import ContactUs from "./ContactUs";
 import MogollonNav from "./MogollonNav";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
+import Services from "./Services";
 
 function App(props) {
   return (
@@ -41,6 +42,7 @@ function App(props) {
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/blogs" component={Blogs} />
             <Route exact path="/contactUs" component={ContactUs} />
+            <Route exact path="/services" component={Services} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
           </div>

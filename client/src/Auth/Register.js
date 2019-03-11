@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import axios from "axios";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 function Register(props) {
   const [name, setName] = useState("");
@@ -12,11 +15,11 @@ function Register(props) {
   function handleSubmit(e) {
     e.preventDefault();
     const newUser = { name, email, password, passwordTwo };
-    console.log(newUser);
     axios
       .post("/api/users/register", newUser)
-      .then(res => {
-        console.log(res.data);
+      .then(() => {
+        props.setUser(newUser);
+        props.history.push("/login");
       })
       .catch(err => setErrors(err.response.data));
   }
@@ -73,7 +76,7 @@ function Register(props) {
           <div className="form-group">
             <input
               className={classnames("form-control", {
-                "is-invalid": errors.password
+                "is-invalid": errors.passwordTwo
               })}
               placeholder="Confirm Password"
               type="password"
@@ -94,4 +97,17 @@ function Register(props) {
   );
 }
 
-export default Register;
+Register.propTypes = {
+  setUser: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: user => dispatch({ type: "SET_USER", user })
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withRouter(Register));

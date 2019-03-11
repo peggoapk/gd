@@ -38,7 +38,6 @@ export const Landing = () => {
               backgroundImage:
                 "url(https://lh3.googleusercontent.com/0mHEZJJ8SDUToE3-CP-Sr5sscREwPRHplOLPLv5CWaS5KDndvdYJADnZph2E_E4oDrVg9iNW841OglQv5LuU2eu2Y-_-N7wfjsw-ppOTeUurkP0nnP1YCX045AAdKd87KuLHnhXk2lPAh14tgypUTlNUDFzUEX3dFWWmtVhRYJ9gT9qUbPSYgE8jFoocgqvumCL3JKRh5B_s8t8QYnBO4uDoRguWuG9gYhMV5_PLK3qyYvTeJ-REBX_pqxh_EVM_FYNA9Kyg4XS6UPU8euaOBjY5nsE6Re523gjDl4RrKDV8WGVxKQR6SEZpr5pPz_pIJ8XXcrI6EeziaeFDNBAaok4s1qkAq5IcHPKgYUgF5_byXnFdWm977Lj37tIoZ_jb9FtkdUO9NHL7eoOiAoQiq8XpXRgErgvpVFxfPpP9-6LO1C3Nl1_akYR0E0XRvwQAnvLRFiqfQJc8BknyIf0bbaiBP4KuV4LXmAldb3iSWgHbcqibuvCy78jqKxefVW8HM8IefGQL5PRwpcQu0zaKP2PWPGQY1vX7LKsOFkBMSSJ-peRYxhtILl9BOohbf59OL1_f6x3bXOrBKBaegnjlANEidNO8TbaWiYOo34dOQs5Ha4dFpOYMHAAXdU4bBgs=w720-h960-no)"
             }}
-            alt="background"
           />
           <img
             className="large"
@@ -71,7 +70,7 @@ export const Landing = () => {
         <p>
           Want to learn more about what we do, or have any questions? Feel free
           to contact me{" "}
-          <a className="emailLink" href="mailto:adairscant@gmail.com">
+          <a className="emailLink" href="mailto:mogolloninteriors@gmail.com">
             here.
           </a>{" "}
         </p>

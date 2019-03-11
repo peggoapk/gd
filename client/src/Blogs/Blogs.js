@@ -20,6 +20,9 @@ function Blogs(props) {
   return (
     <>
       <h1 className="display-4 text-center">Blog Page</h1>
+      {props.isAuthenticated && (
+        <button className="btn btn-outline-primary">New Blog</button>
+      )}
       <div className="card-columns">{blogs && <Blog blogs={blogs} />}</div>
     </>
   );

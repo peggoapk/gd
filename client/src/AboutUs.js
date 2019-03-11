@@ -18,13 +18,20 @@ export const AboutUs = () => {
       </section>
 
       <section>
-        <h3>We are a mom and dad, born and raised in Flagstaff Arizona.</h3>
+        {/* <h3>We are a mom and dad, born and raised in Flagstaff Arizona.</h3> */}
         <hr />
         <p>
-          My name is Adi, I work full time as a teacher, a mom, a wife and have
-          just begun a journey with my husband into the world of remodelling. I
-          was born and raised in Flagstaff AZ. It is a beautiful place and I try
-          to bring it's essence into the remodels that I design.
+          Mogollon design was started with the passion and love for the creation
+          of new spaces. Owner Adair Scantlebury started her business in 2015
+          when she and her husband purchased a hundred year old home in downtown
+          Flagstaff, AZ. She fell in love with the design process and creativity
+          that ensued when remodeling the fixer upper home. Adair takes pride in
+          listening to the client and turning their ideas and style into their
+          dream space. Focussing on restoring the natural beauty of the home,
+          Adair enjoys using neutrals with pops of color and unique textiles to
+          enhance the space. At Mogollon design the goal is to create a
+          functional, unique and beautiful home that the clients will continue
+          to enjoy.
         </p>
       </section>
     </>

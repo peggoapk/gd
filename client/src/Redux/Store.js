@@ -1,12 +1,14 @@
 import { createStore } from "redux";
 import isEmpty from "../Validation/is-empty";
+import setAuthToken from "../Auth/SetAuthToken";
 
 function reducer(state, action) {
   if (!state) {
     return {
       user: {},
       currentUser: {},
-      isAuthenticated: false
+      isAuthenticated: false,
+      authToken: setAuthToken(false)
     };
   }
 
@@ -21,6 +23,14 @@ function reducer(state, action) {
       ...state,
       currentUser: action.currentUser,
       isAuthenticated: !isEmpty(action.currentUser)
+    };
+  }
+  if ((action.type = "LOGOUT_USER")) {
+    return {
+      ...state,
+      currentUser: {},
+      isAuthenticated: false,
+      authToken: setAuthToken(false)
     };
   }
 }

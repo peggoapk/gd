@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -75,6 +76,10 @@ function Login(props) {
     </div>
   );
 }
+
+Login.propTypes = {
+  setCurrentUser: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch => {
   return {

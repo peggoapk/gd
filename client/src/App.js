@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import { Route, Switch } from "react-router-dom";
@@ -14,8 +14,27 @@ import MogollonNav from "./MogollonNav";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import Services from "./Services";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./Auth/SetAuthToken";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 function App(props) {
+  useEffect(checkProps, []);
+
+  function checkProps(prevProps) {
+    if (prevProps !== props) {
+      // check for token
+      if (localStorage.jwtToken) {
+        //set auth token
+        setAuthToken(localStorage.jwtToken);
+        // decode token and get user info and exp
+        const decoded = jwt_decode(localStorage.jwtToken);
+        // set user and isAuthenticated
+        props.setCurrentUser(decoded);
+      }
+    }
+  }
   return (
     <>
       <div>
@@ -55,4 +74,15 @@ function App(props) {
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: currentUser =>
+      dispatch({ type: "SET_CURRENT_USER", currentUser })
+  };
+};
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(App)
+);

@@ -19,36 +19,6 @@ const blogSchema = new Schema({
     type: Date,
     default: Date.now
   }
-  // name: {
-  //   type: String
-  // },
-  // likes: [
-  //   {
-  //     user: {
-  //       type: Schema.Types.ObjectId,
-  //       ref: "users"
-  //     }
-  //   }
-  // ],
-  // comments: [
-  //   {
-  //     user: {
-  //       type: Schema.Types.ObjectId,
-  //       ref: "users"
-  //     },
-  //     text: {
-  //       type: String,
-  //       required: true
-  //     },
-  //     name: {
-  //       type: String
-  //     },
-  //     dateCreated: {
-  //       type: Date,
-  //       default: Date.now
-  //     }
-  //   }
-  // ]
 });
 
 module.exports = Blog = mongoose.model("blog", blogSchema);

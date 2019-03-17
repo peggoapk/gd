@@ -8,8 +8,8 @@ export function getBlogById(id) {
   return axios.get("/api/blogs/" + id);
 }
 
-export function createBlog() {
-  return axios.post("/api/blogs");
+export function createBlog(blog) {
+  return axios.post("/api/blogs", blog);
 }
 
 export function updateBlog(id) {

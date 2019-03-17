@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import Logout from "./Auth/Logout";
 
 function MogollonNav(props) {
   const [navColor, setNavColor] = useState(false);
@@ -14,7 +16,15 @@ function MogollonNav(props) {
       : setNavColor(false);
   }
 
-  // need to add in toggler?
+  const guestLinks = (
+    <Link
+      className={navColor ? "nav-link wLink" : "nav-link bLink"}
+      to="/login"
+    >
+      Login
+    </Link>
+  );
+
   return (
     <>
       <nav
@@ -73,16 +83,15 @@ function MogollonNav(props) {
           >
             Blogs
           </Link>
-          <Link
-            className={navColor ? "nav-link wLink" : "nav-link bLink"}
-            to="/login"
-          >
-            Login
-          </Link>
+          {props.isAuthenticated ? <Logout navColor={navColor} /> : guestLinks}
         </div>
       </nav>
     </>
   );
 }
 
-export default withRouter(MogollonNav);
+const mapStateToProps = state => ({
+  isAuthenticated: state.isAuthenticated
+});
+
+export default withRouter(connect(mapStateToProps)(MogollonNav));

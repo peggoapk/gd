@@ -18,6 +18,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./Auth/SetAuthToken";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import AddBlog from "./Blogs/AddBlog";
 
 function App(props) {
   useEffect(checkProps, []);
@@ -32,6 +33,11 @@ function App(props) {
         const decoded = jwt_decode(localStorage.jwtToken);
         // set user and isAuthenticated
         props.setCurrentUser(decoded);
+        const currentTime = Date.now() / 1000;
+        if (decoded.exp < currentTime) {
+          props.logoutUser({});
+          props.history.push("/login");
+        }
       }
     }
   }
@@ -60,6 +66,7 @@ function App(props) {
           <div className="container">
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/blog/add" component={AddBlog} />
             <Route exact path="/contactUs" component={ContactUs} />
             <Route exact path="/services" component={Services} />
             <Route exact path="/register" component={Register} />
@@ -77,7 +84,8 @@ function App(props) {
 const mapDispatchToProps = dispatch => {
   return {
     setCurrentUser: currentUser =>
-      dispatch({ type: "SET_CURRENT_USER", currentUser })
+      dispatch({ type: "SET_CURRENT_USER", currentUser }),
+    logoutUser: currentUser => dispatch({ type: "LOGOUT_USER", currentUser })
   };
 };
 export default withRouter(

@@ -126,14 +126,13 @@ function Remodel(props) {
 
   return (
     <>
-      {/* <BasicNav /> */}
       <div className="container">
         <div className="row">
           <div className="col-12">
             <h1 className="display-4 d-flex justify-content-between align-items-baseline slideHeading">
               Before
               <i
-                class="far fa-images slideShowIcon mr-2"
+                className="far fa-images slideShowIcon mr-2"
                 onClick={viewBeforeGallery}
               />
             </h1>

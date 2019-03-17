@@ -13,18 +13,20 @@
 
 .wLink {
   opacity: 0.65 !important;
-  color: white;
+  color: white !important;
 }
 
 .wLink:hover {
   opacity: 1 !important;
   color: white !important;
   font-weight: bold !important;
+  cursor: pointer;
 }
 
 .bLink {
   opacity: 0.65 !important;
   color: black !important;
+  cursor: pointer;
 }
 
 .bLink:hover {
@@ -285,11 +287,20 @@ section p {
 .slideShowIcon {
   font-size: .8em;
   cursor: pointer;
-  
 }
 
 .slideShowIcon:hover {
   font-weight: bold;
+}
+
+.penIcon {
+  cursor: pointer;
+  opacity: .8;
+  font-size: 1.4em;
+}
+
+.penIcon:hover {
+  opacity: 1;
 }
 
 .blogTitle {
@@ -306,4 +317,9 @@ section p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.submitButton {
+  outline-color: black !important;
 }

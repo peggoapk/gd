@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getBlogs } from "../services/blogs.service";
+import { connect } from "react-redux";
 import Blog from "./Blog";
 
 function Blogs(props) {
@@ -17,15 +18,38 @@ function Blogs(props) {
       });
   }
 
+  function handleAddBlog() {
+    props.history.push("/blog/add");
+  }
+
   return (
     <>
       <h1 className="display-4 text-center">Blog Page</h1>
+      {/* Make this look good and respond to mobile */}
       {props.isAuthenticated && (
-        <button className="btn btn-outline-primary">New Blog</button>
+        <>
+          <div className="d-none d-md-block">
+            <i
+              className="fas fa-marker penIcon mr-2 py-4"
+              onClick={handleAddBlog}
+            />
+            Add Blog
+          </div>
+          <div className="d-xs-block d-md-none">
+            <i
+              className="fas fa-marker penIcon mr-2 py-4"
+              onClick={handleAddBlog}
+            />
+          </div>
+        </>
       )}
       <div className="card-columns">{blogs && <Blog blogs={blogs} />}</div>
     </>
   );
 }
 
-export default Blogs;
+const mapStateToProps = state => ({
+  isAuthenticated: state.isAuthenticated
+});
+
+export default connect(mapStateToProps)(Blogs);

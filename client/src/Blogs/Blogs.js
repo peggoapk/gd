@@ -24,8 +24,7 @@ function Blogs(props) {
 
   return (
     <>
-      <h1 className="display-4 text-center">Blog Page</h1>
-      {/* Make this look good and respond to mobile */}
+      <h1 className="text-center">Blog Page</h1>
       {props.isAuthenticated && (
         <>
           <div className="d-none d-md-block">

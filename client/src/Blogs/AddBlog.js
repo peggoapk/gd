@@ -23,6 +23,7 @@ function AddBlog(props) {
         <h1 className="display-5">Blog Title</h1>
         <input
           className="form-control"
+          placeholder="Write your title..."
           name="title"
           value={title}
           onChange={e => setTitle(e.target.value)}
@@ -34,7 +35,7 @@ function AddBlog(props) {
         value={content}
         onChange={handleContent}
       />
-      <button className="btn btn-outline-primary" onClick={handleSubmit}>
+      <button className="btn btn-outline-primary my-3" onClick={handleSubmit}>
         Submit
       </button>
     </>

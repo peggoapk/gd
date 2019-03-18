@@ -1,5 +1,7 @@
 import React from "react";
 import renderHTML from "react-render-html";
+import { trimContent } from "./../MiscFunctions";
+import moment from "moment";
 function Blog(props) {
   const { blogs } = props;
   return (
@@ -9,8 +11,12 @@ function Blog(props) {
           <div className="card" key={blog._id}>
             <div className="card-body">
               <h5 className="card-title blogTitle">{blog.title}</h5>
-              <h6 className="text-subtitle text-muted">{blog.dateCreated}</h6>
-              <p className="card-text">{renderHTML(blog.content)}</p>
+              <h6 className="text-subtitle text-muted">
+                {moment(blog.dateCreated).format("MMMM Do YYYY")}
+              </h6>
+              <p className="card-text">
+                {renderHTML(trimContent(blog.content))}
+              </p>
               {blog.image && (
                 <img src={blog.image} alt="blogImage" className="card-img" />
               )}

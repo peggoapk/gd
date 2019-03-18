@@ -6,8 +6,28 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const blogs = require("./routes/api/blogs");
 const path = require("path");
+const cors = require("cors");
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
+
+sgMail.setApiKey(
+  "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"
+);
+
+app.use(cors());
+
+app.get("/api/send-email", (req, res) => {
+  const { recipient, email, topic, message } = req.query;
+  const msg = {
+    to: recipient,
+    from: email,
+    subject: topic,
+    text: message
+  };
+
+  sgMail.send(msg).then(msg => console.log(text));
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

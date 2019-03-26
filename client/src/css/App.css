@@ -293,13 +293,13 @@ section p {
   font-weight: bold;
 }
 
-.penIcon {
+.adminIcon {
   cursor: pointer;
   opacity: .8;
   font-size: 1.4em;
 }
 
-.penIcon:hover {
+.adminIcon:hover {
   opacity: 1;
 }
 

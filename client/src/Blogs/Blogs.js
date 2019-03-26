@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { getBlogs } from "../services/blogs.service";
 import { connect } from "react-redux";
-import Blog from "./Blog";
+const Blog = lazy(() => import("./Blog"));
 
 function Blogs(props) {
   const [blogs, setBlogs] = useState("");
@@ -19,7 +19,7 @@ function Blogs(props) {
   }
 
   function handleAddBlog() {
-    props.history.push("/blog/add");
+    props.history.push("/blogs/createEdit");
   }
 
   return (
@@ -29,20 +29,22 @@ function Blogs(props) {
         <>
           <div className="d-none d-md-block">
             <i
-              className="fas fa-marker penIcon mr-2 py-4"
+              className="fas fa-marker adminIcon mr-2 py-4"
               onClick={handleAddBlog}
             />
             Add Blog
           </div>
           <div className="d-xs-block d-md-none">
             <i
-              className="fas fa-marker penIcon mr-2 py-4"
+              className="fas fa-marker adminIcon mr-2 py-4"
               onClick={handleAddBlog}
             />
           </div>
         </>
       )}
-      <div className="card-columns">{blogs && <Blog blogs={blogs} />}</div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="card-columns">{blogs && <Blog blogs={blogs} />}</div>
+      </Suspense>
     </>
   );
 }

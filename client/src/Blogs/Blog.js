@@ -2,14 +2,20 @@ import React from "react";
 import renderHTML from "react-render-html";
 import { trimContent } from "./../MiscFunctions";
 import moment from "moment";
+import { withRouter } from "react-router-dom";
 function Blog(props) {
   const { blogs } = props;
+
+  function seeBlog(id) {
+    props.history.push("/blogs/" + id);
+  }
+
   return (
     <>
       {blogs.length > 0 ? (
         blogs.map(blog => (
           <div className="card" key={blog._id}>
-            <div className="card-body">
+            <div className="card-body" onClick={() => seeBlog(blog._id)}>
               <h5 className="card-title blogTitle">{blog.title}</h5>
               <h6 className="text-subtitle text-muted">
                 {moment(blog.dateCreated).format("MMMM Do YYYY")}
@@ -30,4 +36,4 @@ function Blog(props) {
   );
 }
 
-export default Blog;
+export default withRouter(Blog);

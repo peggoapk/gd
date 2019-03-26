@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { NotificationManager } from "react-notifications";
 
 function Logout(props) {
   function handleLogout(e) {
@@ -8,6 +9,7 @@ function Logout(props) {
     localStorage.removeItem("jwtToken");
     props.logoutUser({});
     props.history.push("/login");
+    NotificationManager.success("Successfully logged out!");
   }
 
   return (

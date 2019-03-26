@@ -152,7 +152,7 @@ function Remodel(props) {
             <h1 className="display-4 d-flex justify-content-between align-items-baseline slideHeading">
               After
               <i
-                class="far fa-images slideShowIcon mr-2"
+                className="far fa-images slideShowIcon mr-2"
                 onClick={viewAfterGallery}
               />
             </h1>

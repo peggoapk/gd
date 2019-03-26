@@ -18,7 +18,10 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./Auth/SetAuthToken";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import AddBlog from "./Blogs/AddBlog";
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
+import SelectedBlog from "./Blogs/SelectedBlog";
+import CreateEditBlog from "./Blogs/CreateEditBlog";
 
 function App(props) {
   useEffect(checkProps, []);
@@ -63,20 +66,26 @@ function App(props) {
             path={"/projects/remodels/:imageId(\\d+)/afterGallery"}
             component={AfterGallery}
           />
-          <div className="container">
-            <Route exact path="/projects" component={Projects} />
-            <Route exact path="/blogs" component={Blogs} />
-            <Route exact path="/blog/add" component={AddBlog} />
-            <Route exact path="/contactUs" component={ContactUs} />
-            <Route exact path="/services" component={Services} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-          </div>
         </Switch>
+        <div className="container">
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/blogs" component={Blogs} />
+          <Route
+            exact
+            path={["/blogs/createEdit", "/blogs/createEdit/:blogId"]}
+            component={CreateEditBlog}
+          />
+          <Route exact path={"/blogs/:blogId"} component={SelectedBlog} />
+          <Route exact path="/contactUs" component={ContactUs} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </div>
       </div>
       <div>
         <Footer />
       </div>
+      <NotificationContainer />
     </>
   );
 }

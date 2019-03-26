@@ -12,8 +12,8 @@ export function createBlog(blog) {
   return axios.post("/api/blogs", blog);
 }
 
-export function updateBlog(id) {
-  return axios.put("/api/blogs/" + id);
+export function updateBlog(id, blog) {
+  return axios.put("/api/blogs/" + id, blog);
 }
 export function deleteBlog(id) {
   return axios.delete("/api/blogs/" + id);

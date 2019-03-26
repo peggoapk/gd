@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import { NotificationManager } from "react-notifications";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ function Login(props) {
         const currentUser = jwt_decode(token);
         props.setCurrentUser(currentUser);
         props.history.push("/");
+        NotificationManager.success("Successfully logged in!");
       })
       .catch(err => {
         setErrors(err.response.data);
@@ -68,7 +70,10 @@ function Login(props) {
           {errors.password && (
             <div className="invalid-feedback">{errors.password}</div>
           )}
-          <button className="btn btn-outline-primary" onClick={handleLogin}>
+          <button
+            className="btn btn-outline-primary mt-2"
+            onClick={handleLogin}
+          >
             Login
           </button>
         </form>

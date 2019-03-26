@@ -1,20 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { createBlog } from "../services/blogs.service";
+import { createBlog, getBlogById, updateBlog } from "../services/blogs.service";
+import { NotificationManager } from "react-notifications";
 
 function AddBlog(props) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { blogId } = props.match.params;
+
+  if (blogId) {
+    useEffect(getBlog, []);
+  }
+
+  function getBlog() {
+    getBlogById(blogId).then(response => {
+      setTitle(response.data.title);
+      setContent(response.data.content);
+    });
+  }
+
   function handleContent(e) {
     setContent(e);
   }
 
   function handleSubmit() {
-    const blog = { title, content };
-    createBlog(blog).then(res => {
-      console.log(res);
+    const blog = { blogId, title, content };
+    (blogId ? updateBlog(blogId, blog) : createBlog(blog)).then(() => {
+      blogId
+        ? props.history.push("/blogs/" + blogId)
+        : props.history.push("/blogs");
     });
+    blogId
+      ? NotificationManager.success("Updated blog!")
+      : NotificationManager.success("Blog created!").catch(err =>
+          console.log(err)
+        );
   }
 
   return (
@@ -36,7 +57,7 @@ function AddBlog(props) {
         onChange={handleContent}
       />
       <button className="btn btn-outline-primary my-3" onClick={handleSubmit}>
-        Submit
+        {blogId ? "Update" : "Submit"}
       </button>
     </>
   );

@@ -14,7 +14,7 @@ function Blog(props) {
     <>
       {blogs.length > 0 ? (
         blogs.map(blog => (
-          <div className="card" key={blog._id}>
+          <div className="card blogCard my-4" key={blog._id}>
             <div className="card-body" onClick={() => seeBlog(blog._id)}>
               <h5 className="card-title blogTitle">{blog.title}</h5>
               <h6 className="text-subtitle text-muted">

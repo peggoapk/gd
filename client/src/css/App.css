@@ -281,7 +281,7 @@ section p {
 }
 
 .cardProject:hover {
-  box-shadow: 0 0 5px rgb(22, 138, 247);
+  box-shadow: 0 0 5px  #076059;
 }
 
 .slideShowIcon {
@@ -322,4 +322,13 @@ section p {
 
 .submitButton {
   outline-color: black !important;
+}
+
+.blogCard:hover {
+  box-shadow: 0 0 5px #076059 !important;
+  cursor: pointer;
+}
+
+.buttonHover {
+  cursor: pointer;
 }

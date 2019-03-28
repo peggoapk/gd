@@ -5,6 +5,7 @@ import renderHTML from "react-render-html";
 import { NotificationManager } from "react-notifications";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import ShareIcons from "./ShareIcons";
 
 function SelectedBlog(props) {
   const { blogId } = props.match.params;
@@ -72,6 +73,7 @@ function SelectedBlog(props) {
             maxWidth: "50rem"
           }}
         >
+          <ShareIcons blogTitle={blog.title} blogImage={blog.image} />
           <h1 className="font-weight-bold">{blog.title}</h1>
           <p className="text-muted">
             {moment(blog.dateCreated).format("MMMM Do YYYY")}

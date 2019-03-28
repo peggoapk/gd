@@ -8,7 +8,6 @@ function Logout(props) {
     e.preventDefault();
     localStorage.removeItem("jwtToken");
     props.logoutUser({});
-    props.history.push("/login");
     NotificationManager.success("Successfully logged out!");
   }
 
@@ -17,6 +16,7 @@ function Logout(props) {
       <a
         className={props.navColor ? "nav-link wLink" : "nav-link bLink"}
         onClick={handleLogout}
+        href="/login"
       >
         Logout
       </a>

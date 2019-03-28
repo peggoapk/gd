@@ -83,6 +83,7 @@ function SelectedBlog(props) {
             <img
               style={{ maxWidth: "25rem", borderRadius: "25px" }}
               src={blog.image}
+              alt=""
             />
           )}
         </div>

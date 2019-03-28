@@ -17,9 +17,8 @@ function ShareIcons(props) {
     <div style={{ display: "flex" }}>
       <FacebookShareButton
         className="buttonHover"
-        url={url}
+        url={String(window.location)}
         quote={title}
-        hashtag={"test"}
       >
         <FacebookIcon size={32} round />
       </FacebookShareButton>

@@ -25,7 +25,7 @@ function Blogs(props) {
   return (
     <>
       <h1 className="text-center">Blog Page</h1>
-      {props.isAuthenticated && (
+      {props.isAuthenticated && props.isAdmin && (
         <>
           <div className="d-none d-md-block">
             <i
@@ -50,7 +50,9 @@ function Blogs(props) {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.isAuthenticated
+  isAuthenticated: state.isAuthenticated,
+  currentUser: state.currentUser,
+  isAdmin: state.isAdmin
 });
 
 export default connect(mapStateToProps)(Blogs);

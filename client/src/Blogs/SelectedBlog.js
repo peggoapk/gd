@@ -34,7 +34,7 @@ function SelectedBlog(props) {
 
   return (
     <>
-      {props.isAuthenticated && (
+      {props.isAuthenticated && props.isAdmin && (
         <div className="d-flex justify-content-between">
           <div className="d-none d-md-block">
             <i
@@ -93,7 +93,8 @@ function SelectedBlog(props) {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.isAuthenticated
+  isAuthenticated: state.isAuthenticated,
+  isAdmin: state.isAdmin
 });
 
 export default withRouter(connect(mapStateToProps)(SelectedBlog));

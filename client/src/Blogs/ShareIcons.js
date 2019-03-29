@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 import {
   FacebookShareButton,
@@ -13,7 +13,6 @@ function ShareIcons(props) {
   const url = window.location.href;
   const title = props.blogTitle;
 
-  useEffect(() => console.log(url), []);
   return (
     <div style={{ display: "flex" }} className="py-2">
       <FacebookShareButton className="buttonHover" url={url} quote={title}>

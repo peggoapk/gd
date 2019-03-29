@@ -20,9 +20,9 @@ function Blog(props) {
               <h6 className="text-subtitle text-muted">
                 {moment(blog.dateCreated).format("MMMM Do YYYY")}
               </h6>
-              <p className="card-text">
+              <div className="card-text">
                 {renderHTML(trimContent(blog.content))}
-              </p>
+              </div>
               {blog.image && (
                 <img src={blog.image} alt="blogImage" className="card-img" />
               )}

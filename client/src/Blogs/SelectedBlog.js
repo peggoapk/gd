@@ -34,7 +34,7 @@ function SelectedBlog(props) {
 
   return (
     <>
-      {props.isAuthenticated && props.isAdmin && (
+      {props.isAuthenticated && props.isAdmin && blog && (
         <div className="d-flex justify-content-between">
           <div className="d-none d-md-block">
             <i

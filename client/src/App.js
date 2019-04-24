@@ -75,7 +75,7 @@ function App(props) {
             path={["/blogs/createEdit", "/blogs/createEdit/:blogId"]}
             component={CreateEditBlog}
           />
-          <Route exact path={"/blogs/:blogId"} component={SelectedBlog} />
+          <Route exact path="/blogs/:blogId" component={SelectedBlog} />
           <Route exact path="/contactUs" component={ContactUs} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/register" component={Register} />

@@ -7,6 +7,7 @@ import { NotificationManager } from "react-notifications";
 function AddBlog(props) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [errors, setErrors] = useState("");
   const { blogId } = props.match.params;
 
   if (blogId) {
@@ -14,10 +15,12 @@ function AddBlog(props) {
   }
 
   function getBlog() {
-    getBlogById(blogId).then(response => {
-      setTitle(response.data.title);
-      setContent(response.data.content);
-    });
+    getBlogById(blogId)
+      .then(response => {
+        setTitle(response.data.title);
+        setContent(response.data.content);
+      })
+      .catch(error => console.log(error));
   }
 
   function handleContent(e) {
@@ -26,16 +29,18 @@ function AddBlog(props) {
 
   function handleSubmit() {
     const blog = { blogId, title, content };
-    (blogId ? updateBlog(blogId, blog) : createBlog(blog)).then(() => {
-      blogId
-        ? props.history.push("/blogs/" + blogId)
-        : props.history.push("/blogs");
-    });
-    blogId
-      ? NotificationManager.success("Updated blog!")
-      : NotificationManager.success("Blog created!").catch(err =>
-          console.log(err)
-        );
+    (blogId ? updateBlog(blogId, blog) : createBlog(blog))
+      .then(() => {
+        blogId
+          ? props.history.push("/blogs/" + blogId)
+          : props.history.push("/blogs");
+        blogId
+          ? NotificationManager.success("Updated blog!")
+          : NotificationManager.success("Blog created!");
+      })
+      .catch(err => {
+        setErrors(err.response.data);
+      });
   }
 
   return (
@@ -49,6 +54,7 @@ function AddBlog(props) {
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
+        {errors.title && <div style={{ color: "red" }}>{errors.title}</div>}
       </div>
       <ReactQuill
         placeholder="Start your blog..."
@@ -56,6 +62,7 @@ function AddBlog(props) {
         value={content}
         onChange={handleContent}
       />
+      {errors.content && <div style={{ color: "red" }}>{errors.content}</div>}
       <button className="btn btn-outline-primary my-3" onClick={handleSubmit}>
         {blogId ? "Update" : "Submit"}
       </button>

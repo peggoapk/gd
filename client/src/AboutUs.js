@@ -18,7 +18,6 @@ export const AboutUs = () => {
       </section>
 
       <section>
-        {/* <h3>We are a mom and dad, born and raised in Flagstaff Arizona.</h3> */}
         <hr />
         <p>
           Mogollon design was started with the passion and love for the creation

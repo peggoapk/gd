@@ -24,7 +24,7 @@ function Blogs(props) {
 
   return (
     <>
-      <h1 className="text-center">Blog Page</h1>
+      <h1 className="text-center">Our Blogs</h1>
       {props.isAuthenticated && props.isAdmin && (
         <>
           <div className="d-none d-md-block">

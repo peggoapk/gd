@@ -297,6 +297,7 @@ section p {
   cursor: pointer;
   opacity: .8;
   font-size: 1.4em;
+  color: #076059;
 }
 
 .adminIcon:hover {

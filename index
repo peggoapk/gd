@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Quicksand|Roboto" rel="stylesheet">
+    <title>Mogollon Interiors</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCyzl33U3M4_t05v5GwuWo0VrNtl_oXCvc",
+    authDomain: "mogollon-265f0.firebaseapp.com",
+    databaseURL: "https://mogollon-265f0.firebaseio.com",
+    projectId: "mogollon-265f0",
+    storageBucket: "mogollon-265f0.appspot.com",
+    messagingSenderId: "584934835726"
+  };
+  firebase.initializeApp(config);
+</script>
+  </body>
+</html>
